@@ -7,13 +7,13 @@ import "react-calendar-datetime-picker/dist/index.css";
 const Calendar = () => {
   const [date, setDate] = useState(null);
   return (
-    <div>
+    <div className="grid items-center">
       <DtPicker
         onChange={setDate}
         local="en"
         withTime
         showWeekend
-        placeholder ="Book an appointment "
+        placeholder="Book an appointment "
         showTimeInput
         clearBtn
         todayBtn
