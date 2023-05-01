@@ -1,25 +1,37 @@
 import React from "react";
-import DtPicker from "react-calendar-datetime-picker";
-import "react-calendar-datetime-picker";
-import { useState } from "react";
-import "react-calendar-datetime-picker/dist/index.css";
+import {
+  LocalizationProvider,
+  StaticDateTimePicker,
+} from "@mui/x-date-pickers";
+import { AdapterDateFns } from "@mui/x-date-pickers/AdapterDateFns";
+
+
+
 
 const Calendar = () => {
-  const [date, setDate] = useState(null);
+
+  const getValue = (event) => {
+    console.log('Event: ', event.target.value);
+  }
+
   return (
-    <div className="grid items-center">
-      <DtPicker
-        onChange={setDate}
-        local="en"
-        withTime
-        showWeekend
-        placeholder="Book an appointment "
-        showTimeInput
-        clearBtn
-        todayBtn
-        autoClose={false}
-      />
-      <button className="text-white font-bold "> Confirm Appointment</button>
+    <div className="flex items-center justify-center">
+      <LocalizationProvider dateAdapter={AdapterDateFns}>
+        <div className="grid space-y-20">
+          <StaticDateTimePicker />
+          <h1>Barbers</h1>
+          <select>
+            <option>Dan</option>
+            <option>Ty</option>
+            <option>Reece</option>
+            <option>Conor</option>
+            <option>Nate</option>
+          </select>
+          <input placeholder="Name" onChange= {getValue} required />
+          <input placeholder="Email" required/>
+          <button className="bg-white">Submit</button>
+        </div>
+      </LocalizationProvider>
     </div>
   );
 };
