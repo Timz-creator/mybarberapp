@@ -8,18 +8,18 @@ const Whours = () => {
         <div className="text-white">
           <img className=" p-4" src={Card1} alt="/" />
         </div>
-        <div className="text-white bg-black grid justify-center ">
+        <div className="text-white bg-black grid justify-center text-center ">
           <h1 className="font-bold pb-10 text-[#DAA520] font-serif">Working Hours</h1>
-          <p1>
+          <p1 className="font-serif">
             Our hours are flexible and convenient, with early morning and late
             evening appointments avaliable.
           </p1>
           <br></br>
-          <p2>Weekdays 9 AM - 9 PM</p2>
+          <p2 className="font-serif">Weekdays 9 AM - 9 PM</p2>
           <br></br>
-          <b2>Saturday 10 AM - 7 PM</b2>
+          <b2 className="font-serif">Saturday 10 AM - 7 PM</b2>
           <br></br>
-          <p4>Sunday Closed</p4>
+          <p4 className="font-serif">Sunday Closed</p4>
         </div>
       </div>
     </div>
