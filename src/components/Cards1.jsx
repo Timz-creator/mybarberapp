@@ -31,12 +31,12 @@ const Cards1 = () => {
             <p1>Charge: <span className="text-[#DAA520]">£20</span></p1>
           </div>
           <div className="text-center border border-[#DAA520]">
-            <img classname="h-48 w-full object-cover p-2" src={card3} alt="/" />
+            <img classname="h-48 w-full object-scale-down " src={card3} alt="/" />
             <h1 className="text-[#DAA520]">Trimming</h1>
             <p1>Charge: <span className="text-[#DAA520]">£35</span></p1>
           </div>
           <div className="border border-[#DAA520] text-center">
-            <img classname="h-48 w-full object-cover p-2" src={card4} alt="/" />
+            <img classname="h-48 w-full object-cover p-2 " src={card4} alt="/" />
             <h1 className="text-[#DAA520]">Style</h1>
             <p1>Charge: <span className="text-[#DAA520]">£40</span></p1>
           </div>

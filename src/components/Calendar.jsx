@@ -15,7 +15,7 @@ const Calendar = () => {
     let name = document.getElementById("nameInput").value;
     let barbers = document.getElementById("barbers").value;
     alert(
-      `Ypur Appointment at ${date} with ${barbers} is confirmed! See you soon ${name}`
+      `Your Appointment at ${date} with ${barbers} is confirmed! See you soon ${name}`
     );
   };
 
@@ -23,7 +23,7 @@ const Calendar = () => {
     <div className="flex items-center justify-center">
       <LocalizationProvider dateAdapter={AdapterDateFns}>
         <div className="grid space-y-5">
-          <StaticDateTimePicker
+          <StaticDateTimePicker 
             id="appointment"
             onChange={(date) => setDate(date)}
           />

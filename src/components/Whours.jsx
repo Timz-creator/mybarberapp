@@ -6,10 +6,10 @@ const Whours = () => {
     <div className="w-full my-32 bg-black">
       <div className="max-w-[1240px] mx-auto grid grid-cols-2 space-x-16 ">
         <div className="text-white">
-          <img className=" p-4" src={Card1} alt="/" />
+          <img className=" object-fill" src={Card1} alt="/" />
         </div>
         <div className="text-white bg-black grid justify-center text-center ">
-          <h1 className="font-bold pb-10 text-[#DAA520] font-serif">Working Hours</h1>
+          <h1 className="font-bold pb-10 text-[#DAA520] font-serif pt-5">Working Hours</h1>
           <p1 className="font-serif">
             Our hours are flexible and convenient, with early morning and late
             evening appointments avaliable.
