@@ -9,12 +9,12 @@ const Cards1 = () => {
     <div className="w-full my-32">
       <div className="text-white max-w-[1240px] mx-auto">
         <div className="text-center">
-          <h1 className="pb-5 text-3xl text-[#DAA520]">Our services</h1>
-          <p1 className="py-6 leading-8">
+          <h1 className="pb-5 text-3xl text-[#DAA520] font-serif">Our services</h1>
+          <p1 className="py-6 leading-8 font-serif">
             We are dedicated to providing you with the best possible experience.
             Our team of experts is
           </p1>
-          <h1>
+          <h1 className="font-serif">
             here to help you every step of the way, from choosing the right
             service to the end.
           </h1>
