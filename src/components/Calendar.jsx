@@ -20,46 +20,60 @@ const Calendar = () => {
   };
 
   return (
-    <div className="w-full my-32">
+    <div id="appointment" className="w-full my-32">
       <div className="pl-10 flex justify-center pb-10 text-[#DAA520] font-serif text-3xl">
-        <h1>Appointment</h1>
+        <h1>Appointment Booking</h1>
       </div>
 
       <LocalizationProvider dateAdapter={AdapterDateFns}>
-        <div className="grid grid-cols-2 ">
+        <div className="grid grid-cols-2 h-full">
           <div className="flex justify-center ">
             <StaticDateTimePicker
-              id="appointment"
               onChange={(date) => setDate(date)}
             />
           </div>
-          <div className="space-y-10 pt-10 ">
-            <select className="rounded-full" id="barbers">
-              <option value="">Choose your barber</option>
-              <option value="Dan">Dan</option>
-              <option value="Ty">Ty</option>
-              <option value="Reece">Reece</option>
-              <option value="Connor">Conor</option>
-              <option value="Nate">Nate</option>
-            </select>
-            <div>
-              <input
-                id="nameInput"
-                placeholder="  Enter your name"
-                onChange={getValue}
-                required
-                className="rounded-full"
-              />
+          <form className="h-64 w-60 mb-1 ">
+            <div className="pl-10 space-y-8">
+              <div>
+                <label className="text-[#DAA520]">Barbers</label>
+                <select className="rounded-full pb-1" id="barbers">
+                  <option value="">Choose your barber</option>
+                  <option value="Dan">Dan</option>
+                  <option value="Ty">Ty</option>
+                  <option value="Reece">Reece</option>
+                  <option value="Connor">Conor</option>
+                  <option value="Nate">Nate</option>
+                </select>
+              </div>
+
+              <div>
+                <label className="text-[#DAA520]">Name</label>
+                <input
+                  id="nameInput"
+                  placeholder="  Enter your name"
+                  onChange={getValue}
+                  required
+                  className="rounded-full"
+                />
+              </div>
+              <div>
+                <label className="text-[#DAA520]">Email</label>
+                <input
+                  className="rounded-full"
+                  placeholder="  Enter your Email"
+                  required
+                />
+              </div>
+              <div className="pb-10">
+                <button
+                  className="bg-white rounded-full p-1  "
+                  onClick={confirmation}
+                >
+                  Submit
+                </button>
+              </div>
             </div>
-            <div>
-              <input className="rounded-full" placeholder="  Enter your Email" required />
-            </div>
-            <div>
-              <button className="bg-white rounded-full p-1" onClick={confirmation}>
-                Submit
-              </button>
-            </div>
-          </div>
+          </form>
         </div>
       </LocalizationProvider>
     </div>

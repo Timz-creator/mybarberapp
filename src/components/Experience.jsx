@@ -19,7 +19,7 @@ const Experience = () => {
             is why we offer addordable and innovatice products that are easy to
             use and deliver professional results.
           </p>
-          <button className="border-[8px] border-[#DAA520] bg-[#DAA520] text-black">
+          <button className="border-[2px] p-2 px-4 border-[#DAA520] bg-[#DAA520] text-black hover:text-[#DAA520] hover:bg-black ">
             More about us
           </button>
         </div>
