@@ -5,6 +5,7 @@ import Experience from "./components/Experience";
 import Cards1 from "./components/Cards1";
 import Whours from "./components/Whours";
 import Calendar from "./components/Calendar";
+import Footer from "./components/Footer";
 
 
 function App() {
@@ -16,6 +17,7 @@ function App() {
       <Cards1 />
       <Whours />
       <Calendar />
+      <Footer />
     </div>
   );
 }

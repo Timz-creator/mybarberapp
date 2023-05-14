@@ -8,6 +8,7 @@ import { useState } from "react";
 
 const Calendar = () => {
   const [date, setDate] = useState(null);
+
   const getValue = (event) => {
     console.log("Event: ", event.target.value);
   };
@@ -76,6 +77,10 @@ const Calendar = () => {
           </form>
         </div>
       </LocalizationProvider>
+      <div className="pt-5">
+        <hr className="bg-white "/>
+      </div>
+     
     </div>
   );
 };
