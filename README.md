@@ -1,6 +1,6 @@
 # Barber Website Landing Page
 
-![Project Banner](.//Users/timarleyfoster/Desktop/barber-app/src/assets/BarberWeb.png)
+![Project Banner](./BarberWeb.png)
 
 A responsive landing page for a personal barber website built using React.js, Tailwind CSS, and HTML. This landing page showcases a modern and sleek design, providing users with information about the barber shop and a call-to-action to book appointments.
 
