@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import {
   LocalizationProvider,
   StaticDateTimePicker,
@@ -9,16 +9,60 @@ import { useState } from "react";
 const Calendar = () => {
   const [date, setDate] = useState(null);
 
+  const [newAppointment, setNewAppointment] = useState({
+    date: "",
+    name: "",
+    barber: "",
+    email: "",
+  });
+
   const getValue = (event) => {
     console.log("Event: ", event.target.value);
   };
-  const confirmation = () => {
+  async function confirmation(event) {
+    event.preventDefault();
+
     let name = document.getElementById("nameInput").value;
-    let barbers = document.getElementById("barbers").value;
+    let barber = document.getElementById("barbers").value;
+    let email = document.getElementById("emailInput").value;
+
+    setNewAppointment({
+      date: date,
+      name: name,
+      barber: barber,
+      email: email,
+    });
+
     alert(
-      `Your Appointment at ${date} with ${barbers} is confirmed! See you soon ${name}`
+      `Your Appointment at ${date} with ${barber} is confirmed! See you soon ${name}`
     );
-  };
+
+    console.log("Date:", date);
+    console.log("Name", name);
+    console.log("Barbr:", barber);
+    console.log("Email:", email);
+
+    
+  }
+  useEffect(() => {
+    if (
+      newAppointment.date &&
+      newAppointment.name &&
+      newAppointment.barber &&
+      newAppointment.email
+    ) {
+      fetch("http://localhost:8000/record/add", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(newAppointment),
+      }).catch((error) => {
+        window.alert(error);
+        return;
+      });
+    }
+  }, [newAppointment]);
 
   return (
     <div id="appointment" className="w-full my-32">
@@ -29,9 +73,7 @@ const Calendar = () => {
       <LocalizationProvider dateAdapter={AdapterDateFns}>
         <div className="grid grid-cols-2 h-full">
           <div className="flex justify-center ">
-            <StaticDateTimePicker
-              onChange={(date) => setDate(date)}
-            />
+            <StaticDateTimePicker onChange={(date) => setDate(date)} />
           </div>
           <form className="h-64 w-60 mb-1 ">
             <div className="pl-10 space-y-8">
@@ -60,6 +102,7 @@ const Calendar = () => {
               <div>
                 <label className="text-[#DAA520]">Email</label>
                 <input
+                  id="emailInput"
                   className="rounded-full"
                   placeholder="  Enter your Email"
                   required
@@ -78,9 +121,8 @@ const Calendar = () => {
         </div>
       </LocalizationProvider>
       <div className="pt-5">
-        <hr className="bg-white "/>
+        <hr className="bg-white " />
       </div>
-     
     </div>
   );
 };
